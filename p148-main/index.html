@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+
+  </head>
+  <body>
+    <a-scene >
+
+    <!--Ambient-->
+    <a-entity light="type:ambient;intensity:0.5;">
+    </a-entity>
+
+    <!--Point Light-->
+    <a-entity light="type: point; intensity: 0.5; distance: 50; decay: 2; color: yellow"
+    position="0 3.5 -1">
+    </a-entity> 
+      
+    <!---Assets-->
+
+      <!--Girl
+      <a-a-assets>
+        <a-asset-item id="girl" src="assets/girl/scene.gltf"></a-asset-item>
+      </a-a-assets>-->
+
+      <!--Bench-->
+      <a-a-assets>
+        <a-asset-item id="bench" src="assets/bench/scene.gltf"></a-asset-item>
+      </a-a-assets>
+
+      <!--Lamp-->
+      <a-a-assets>
+        <a-asset-item id="lamp" src="assets/lamp/scene.gltf"></a-asset-item>
+      </a-a-assets>
+
+      <!--Cat-->
+      <a-a-assets>
+        <a-asset-item id="cat" src="assets/cat/scene.gltf"></a-asset-item>
+      </a-a-assets>
+
+
+      <!--Loading models-->
+        <!--Bench-->
+        <a-entity
+          gltf-model="#bench"
+          scale="0.5 0.5 0.5"
+          position="-0.5 0 -1.5"
+        ></a-entity>
+
+        <!--Bench-->
+        <a-entity
+          gltf-model="#bench"
+          scale="0.5 0.5 0.5"
+          position="2 0 -1.5"
+        ></a-entity>
+
+        <!--Lamp-->
+        <a-entity
+          gltf-model="#lamp"
+          scale="0.20 0.15 0.2"
+          position="0 0 -2.75"
+        ></a-entity>
+
+        <!--Cat-->
+        <a-entity
+          gltf-model="#cat"
+          scale="0.015 0.01 0.01"
+          position="3 0 -3"
+          rotation="1 -90 6"
+        ></a-entity>
+
+        <!--Wall-->
+        <a-box position="0 3 -8" height="10" width="15" id="bg" rotation="0 180 0"
+          src="./assets/background.jpg"
+        >
+        </a-box>
+
+        <!--Ground-->
+        <a-plane position="0 -2 -8" height="10" width="15" id="ground" rotation="-100 0 0"
+          src="./assets/street/roadSurface_Color.png"
+        >
+        </a-plane>
+
+      <!-- CAMERA -->
+      <a-entity
+        camera="active: true"
+        look-controls
+        position="0 2 2"
+      ></a-entity>
+    </a-scene>
+  </body>
+</html>
